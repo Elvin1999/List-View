@@ -18,7 +18,8 @@
             <Label Content="Subjects" Name="xTypelbl" Width="120" Height="30" Margin="-500,30,0,0" FontSize="15"></Label>
             <Label Content="Level" Name="levellbl" Width="120" Height="30" Margin="-500,90,0,0" FontSize="15"></Label>
             <TextBox  Name="qroupTxtb" Width="150" Text="{Binding CurrentGroup.Name, Mode=TwoWay}" Height="25" FontSize="15" Margin="-250,-30,0,0"></TextBox>
-            <ComboBox Width="150" Height="30" Margin="-250,30,0,0" ItemsSource="{Binding Subjects}">
+            <ComboBox Width="150" Height="30" Margin="-250,30,0,0" ItemsSource="{Binding Subjects}" DisplayMemberPath="Name"
+                      SelectedValuePath="Name">
             </ComboBox>
             <ComboBox Width="150" Height="30" Margin="-250,90,0,0" ItemsSource="{Binding Levels}">
             </ComboBox>
