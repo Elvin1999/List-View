@@ -25,8 +25,6 @@ namespace ListView
         public MainWindow(GroupViewModel GroupVM)
         {
             InitializeComponent();
-            GroupVM = new GroupViewModel();
-            DataContext = GroupVM;
             this.GroupVM = GroupVM;
             DataContext = GroupVM;
         }
