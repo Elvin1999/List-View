@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ListView.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -8,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace ListView.ViewModel
 {
-    class GroupViewModel : BaseViewModel
+   public class GroupViewModel : BaseViewModel
     {
 
-        public Group CurrentGroup { get; set; }
-        private List<Group> allgroups;
-        public List<Group> AllGroups
+        public Entities.Group CurrentGroup { get; set; }
+        private List<Entities.Group> allgroups;
+        
+        public List<Entities.Group> AllGroups
         {
             get
             {
@@ -22,9 +24,12 @@ namespace ListView.ViewModel
             set
             {
                 allgroups = value;
-                OnPropertyChanged(new PropertyChangedEventArgs("AllGroups"))
+                OnPropertyChanged(new PropertyChangedEventArgs("AllGroups"));
             }
         }
+        public List<Filial> Filials { get; set; }
+        public List<Subject> Subjects { get; set; }
+        public List<int> Levels { get; set; }
 
     }
 

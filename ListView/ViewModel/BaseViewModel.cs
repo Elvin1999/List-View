@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ListView.ViewModel
 {
-    class BaseViewModel : INotifyPropertyChanged
+   public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(PropertyChangedEventArgs e)

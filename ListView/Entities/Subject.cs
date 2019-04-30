@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ListView.Entities
 {
-    class Subject
+   public class Subject
     {
         public int Id { get; set; }
         public string Name { get; set; }
