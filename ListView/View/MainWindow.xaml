@@ -14,17 +14,40 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Background="DeepSkyBlue">
-
             <Label Content="Group Name" Name="groupNamelbl" Width="120" Height="30" Margin="-500,-30,0,0" FontSize="15"></Label>
-            <Label Content="Servis type" Name="xTypelbl" Width="120" Height="30" Margin="-500,30,0,0" FontSize="15"></Label>
+            <Label Content="Subjects" Name="xTypelbl" Width="120" Height="30" Margin="-500,30,0,0" FontSize="15"></Label>
             <Label Content="Level" Name="levellbl" Width="120" Height="30" Margin="-500,90,0,0" FontSize="15"></Label>
             <TextBox  Name="qroupTxtb" Width="150" Height="25" FontSize="15" Margin="-250,-30,0,0"></TextBox>
-            <ComboBox Width="150" Height="30" Margin="-250,30,0,0"></ComboBox>
-            <ComboBox Width="150" Height="30" Margin="-250,90,0,0"></ComboBox>
+            <ComboBox Width="150" Height="30" Margin="-250,30,0,0">
+                <ComboBoxItem>Programming</ComboBoxItem>
+                <ComboBoxItem>IT</ComboBoxItem>
+                <ComboBoxItem>Design</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Width="150" Height="30" Margin="-250,90,0,0">
+                <ComboBoxItem>
+                    1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    3
+                </ComboBoxItem>
+            </ComboBox>
             <Label Content="Filial" Name="filiallbl" Width="120" Height="30" Margin="180,-30,0,0" FontSize="15"></Label>
             <Label Content="Note" Name="qeydTxtb" Width="120" Height="30" Margin="180,30,0,0" FontSize="15"></Label>
-            <ComboBox Width="150" Height="30" Margin="310,-30,0,0"></ComboBox>
-            <TextBox  Name="noteTxtb" Width="180" Height="60" FontSize="15" Margin="340,80,0,0" ></TextBox>
+            <ComboBox Width="150" Height="30" Margin="310,-30,0,0">
+                <ComboBoxItem>
+                    Baku
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Sumqayit
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Khirdalan
+                </ComboBoxItem>
+            </ComboBox>
+            <TextBox Name="noteTxtb" Width="180" Height="60" FontSize="15" Margin="340,80,0,0"></TextBox>
             <Button Name="AddBtn" Width="100" Height="30" Margin="650,-30,0,10" Content="Add" FontSize="15"></Button>
             <Button Name="ChangeBtn" Width="100" Height="30" Margin="650,60,0,10" Content="Change" FontSize="15"></Button>
             <Button Name="CancelBtn" Width="100" Height="30" Margin="650,140,0,10" Content="Cancel" FontSize="15"></Button>
