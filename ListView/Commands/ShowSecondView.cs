@@ -1,6 +1,7 @@
 ﻿using ListView.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace ListView.Commands
         {
 
             GroupViewModel groupViewModel = new GroupViewModel();
-            groupViewModel.AllGroups = new List<Entities.Group>();
+            groupViewModel.AllGroups = new ObservableCollection<Entities.Group>();
 
             groupViewModel.Filials = new List<Entities.Filial>()
             {
@@ -56,6 +57,7 @@ namespace ListView.Commands
                     Name="Design"
                 }
             };
+            groupViewModel.CurrentGroup = new Entities.Group();
             MainWindow secWindow = new MainWindow(groupViewModel);
             secWindow.ShowDialog();
 

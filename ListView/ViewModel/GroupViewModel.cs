@@ -1,6 +1,7 @@
 ﻿using ListView.Entities;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,9 @@ namespace ListView.ViewModel
     {
 
         public Entities.Group CurrentGroup { get; set; }
-        private List<Entities.Group> allgroups;
+        private ObservableCollection<Entities.Group> allgroups;
         
-        public List<Entities.Group> AllGroups
+        public ObservableCollection<Entities.Group> AllGroups
         {
             get
             {
@@ -24,9 +25,10 @@ namespace ListView.ViewModel
             set
             {
                 allgroups = value;
-                OnPropertyChanged(new PropertyChangedEventArgs("AllGroups"));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(AllGroups)));
             }
         }
+        
         public List<Filial> Filials { get; set; }
         public List<Subject> Subjects { get; set; }
         public List<int> Levels { get; set; }
