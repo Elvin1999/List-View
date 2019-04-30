@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ListView.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,16 @@ namespace ListView
     /// </summary>
     public partial class MainWIndow : Window
     {
+
+        MainWindowViewModel MainVM { get; set; }
         public MainWIndow()
         {
             InitializeComponent();
+
+            MainVM = new MainWindowViewModel();
+
+            DataContext = MainVM;
         }
+      
     }
 }

@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWIndow.xaml">
+    <Page Include="View\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -70,11 +70,13 @@
     <Compile Include="Commands\Add.cs" />
     <Compile Include="Commands\Cancel.cs" />
     <Compile Include="Commands\Change.cs" />
+    <Compile Include="Commands\ShowSecondView.cs" />
     <Compile Include="Entities\Filial.cs" />
     <Compile Include="Entities\Group.cs" />
     <Compile Include="Entities\Subject.cs" />
-    <Compile Include="MainWIndow.xaml.cs">
-      <DependentUpon>MainWIndow.xaml</DependentUpon>
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\GroupViewModel.cs" />

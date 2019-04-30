@@ -22,7 +22,7 @@ namespace ListView
     public partial class MainWindow : Window
     {
         public GroupViewModel GroupVM { get; set; }
-        public MainWindow()
+        public MainWindow(GroupViewModel GroupVM)
         {
             InitializeComponent();
             GroupVM = new GroupViewModel();
