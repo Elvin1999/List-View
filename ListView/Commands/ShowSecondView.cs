@@ -35,7 +35,12 @@ namespace ListView.Commands
                 {
                     Id=1,Name="Elvin", Subject=new Entities.Subject(){
                         Id=6,Name="Math"
-                    },Level=1,Filial=new Entities.Filial(){
+                    },
+                    Level=new Entities.Level()
+                    {
+                        Id=1,Name="Beginner"
+                    }
+                    ,Filial=new Entities.Filial(){
 
                         Id=5,Name="Nizami Filiali"
                     },Note="Everything is okay ."
@@ -58,7 +63,21 @@ namespace ListView.Commands
                     Id=3,Name="Khirdalan"
                 }
             };
-            groupViewModel.Levels = new List<int> { 1, 2, 3 };
+            groupViewModel.Levels = new List<Entities.Level>()
+            {
+                new Entities.Level()
+                {
+                    Id=5,Name="Beginner"
+                },
+                new Entities.Level()
+                {
+                    Id=6,Name="Elementary"
+                },
+                new Entities.Level()
+                {
+                    Id=7,Name="Pre-Intermediate"
+                }
+            };
             groupViewModel.Subjects = new List<Entities.Subject>() {
 
                 new Entities.Subject()

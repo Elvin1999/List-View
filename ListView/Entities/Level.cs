@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace ListView.Entities
 {
-   public class Group
+   public class Level
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Subject Subject { get; set; }
-        public Level Level { get; set; }
-        public Filial Filial { get; set;}
-        public string Note { get; set; }
     }
 }
