@@ -21,8 +21,28 @@ namespace ListView.Commands
         public void Execute(object parameter)
         {
 
+            /*      public int Id { get; set; }
+        public string Name { get; set; }
+        public Subject Subject { get; set; }
+        public int Level { get; set; }
+        public Filial Filial { get; set;}
+        public string Note { get; set; }*/
+
             GroupViewModel groupViewModel = new GroupViewModel();
-            groupViewModel.AllGroups = new ObservableCollection<Entities.Group>();
+            groupViewModel.AllGroups = new ObservableCollection<Entities.Group>()
+            {
+                new Entities.Group()
+                {
+                    Id=1,Name="Elvin", Subject=new Entities.Subject(){
+                        Id=6,Name="Math"
+                    },Level=1,Filial=new Entities.Filial(){
+
+                        Id=5,Name="Nizami Filiali"
+                    },Note="Everything is okay ."
+
+
+                }
+            };
 
             groupViewModel.Filials = new List<Entities.Filial>()
             {

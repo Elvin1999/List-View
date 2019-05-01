@@ -28,14 +28,14 @@
             <ComboBox Width="150" Height="30" Margin="310,-30,0,0" ItemsSource="{Binding Filials}" DisplayMemberPath="Name">
             </ComboBox>
             <TextBox Name="noteTxtb" Width="180" Height="60" FontSize="15" Text="{Binding CurrentGroup.Note}" Margin="340,80,0,0"></TextBox>
-            <Button Name="AddBtn" Width="100" Height="30" Margin="650,-30,0,10" Content="Add" FontSize="15"></Button>
+            <Button Name="AddBtn" Width="100" Height="30" Margin="650,-30,0,10" Command="{Binding AddNewItem}" Content="Add" FontSize="15"></Button>
             <Button Name="ChangeBtn" Width="100" Height="30" Margin="650,60,0,10" Content="Change" FontSize="15"></Button>
             <Button Name="CancelBtn" Width="100" Height="30" Margin="650,140,0,10" Content="Cancel" FontSize="15"></Button>
         </Grid>
         
         <Grid Grid.Row="1" >
 
-            <ListView>
+            <ListView ItemsSource="{Binding AllGroups}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Id" Width="100">
@@ -48,35 +48,35 @@
                         <GridViewColumn Header="GroupName" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Id}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Name}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Level" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Id}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Level}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Filial" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Id}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Filial.Name}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Servic type" Width="100">
+                        <GridViewColumn Header="Subject" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Id}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Subject.Name}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Note" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Id}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Note}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

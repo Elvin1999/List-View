@@ -1,4 +1,5 @@
-﻿using ListView.Entities;
+﻿using ListView.Commands;
+using ListView.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,11 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
 namespace ListView.ViewModel
 {
    public class GroupViewModel : BaseViewModel
     {
+
+        public Add AddNewItem => new Add();
 
         public Entities.Group CurrentGroup { get; set; }
         private ObservableCollection<Entities.Group> allgroups;
