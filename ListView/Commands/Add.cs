@@ -12,6 +12,12 @@ namespace ListView.Commands
 {
    public class Add : ICommand
     {
+        public GroupViewModel GroupViewModel { get; set; }
+        public Add(GroupViewModel viewModel)
+        {
+            GroupViewModel = viewModel;
+        }
+
 
         public event EventHandler CanExecuteChanged;
 
@@ -23,7 +29,9 @@ namespace ListView.Commands
         public void Execute(object parameter)
         {
             MessageBoxResult result = MessageBox.Show("Hello MessageBox");
-       
+            GroupViewModel.AllGroups.Add(GroupViewModel.CurrentGroup);
+            GroupViewModel.CurrentGroup = null;
+
         }
     }
 }
