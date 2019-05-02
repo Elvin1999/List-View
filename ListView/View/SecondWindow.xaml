@@ -10,7 +10,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"></RowDefinition>
             <RowDefinition Height="5*"></RowDefinition>
-            
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Background="DeepSkyBlue">
@@ -38,8 +37,6 @@
             </ComboBox>
             <TextBox Name="noteTxtb" Width="180" Height="60" FontSize="15" Text="{Binding CurrentGroup.Note}" Margin="340,80,0,0"></TextBox>
             <Button Name="AddBtn" Width="100" Height="30" Margin="650,-30,0,10" Command="{Binding AddNewItem}" Content="Add" FontSize="15"></Button>
-            <Button Name="ChangeBtn" Width="100" Height="30" Margin="650,60,0,10" Content="Change" FontSize="15"></Button>
-            <Button Name="CancelBtn" Width="100" Height="30" Margin="650,140,0,10" Content="Cancel" FontSize="15"></Button>
         </Grid>
         
         <Grid Grid.Row="1" >

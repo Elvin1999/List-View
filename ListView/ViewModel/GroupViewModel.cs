@@ -14,8 +14,6 @@ namespace ListView.ViewModel
     {
 
         public Add AddNewItem => new Add(this);
-
-        
         private ObservableCollection<Entities.Group> allgroups;
         
         public ObservableCollection<Entities.Group> AllGroups
@@ -49,7 +47,7 @@ namespace ListView.ViewModel
         public Entities.Group SelectedGroup
         {
             get
-            {
+            { 
                 return selectedGroup;
             }
             set
@@ -57,12 +55,11 @@ namespace ListView.ViewModel
                 selectedGroup = value;
                 if (value != null)
                 {
-                    //currentEmployee = SelectedEmployee.Clone();
+                    currentGroup = SelectedGroup.Clone();
                 }
                 OnPropertyChanged(new PropertyChangedEventArgs(nameof(CurrentGroup)));
             }
         }
-
         public List<Filial> Filials { get; set; }
         public List<Subject> Subjects { get; set; }
         public List<Level> Levels { get; set; }

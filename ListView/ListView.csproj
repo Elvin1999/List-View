@@ -68,8 +68,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Commands\Add.cs" />
-    <Compile Include="Commands\Cancel.cs" />
-    <Compile Include="Commands\Change.cs" />
     <Compile Include="Commands\ShowSecondView.cs" />
     <Compile Include="Entities\Filial.cs" />
     <Compile Include="Entities\Group.cs" />
