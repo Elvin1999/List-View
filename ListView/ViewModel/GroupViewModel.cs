@@ -12,7 +12,6 @@ namespace ListView.ViewModel
 {
    public class GroupViewModel : BaseViewModel
     {
-
         public Add AddNewItem => new Add(this);
         private ObservableCollection<Entities.Group> allgroups;
         
