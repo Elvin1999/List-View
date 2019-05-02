@@ -55,9 +55,9 @@ namespace ListView.ViewModel
                 selectedGroup = value;
                 if (value != null)
                 {
-                    currentGroup = SelectedGroup.Clone();
+                    CurrentGroup = SelectedGroup.Clone();
                 }
-                OnPropertyChanged(new PropertyChangedEventArgs(nameof(CurrentGroup)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SelectedGroup)));
             }
         }
         public List<Filial> Filials { get; set; }

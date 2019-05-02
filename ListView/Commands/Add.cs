@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
 using ListView.ViewModel;
+using ListView.Entities;
 
 namespace ListView.Commands
 {
@@ -25,11 +26,21 @@ namespace ListView.Commands
         {
             return true;
         }
-
         public void Execute(object parameter)
         {
-            MessageBoxResult result = MessageBox.Show("Hello MessageBox");
-            GroupViewModel.AllGroups.Add(GroupViewModel.CurrentGroup);
+            var item = GroupViewModel.AllGroups.FirstOrDefault(x => x.Id == GroupViewModel.CurrentGroup.Id);
+
+            if (item==null)
+            {
+                GroupViewModel.AllGroups.Add(GroupViewModel.CurrentGroup);
+                MessageBoxResult add = MessageBox.Show("added");
+            }
+            else
+            {
+                var index = GroupViewModel.AllGroups.IndexOf(item);
+                GroupViewModel.AllGroups[index] = GroupViewModel.CurrentGroup;
+                MessageBoxResult add = MessageBox.Show("updated");
+            }
             GroupViewModel.CurrentGroup = null;
 
         }
