@@ -20,16 +20,21 @@
             <TextBox  Name="qroupTxtb" Width="150" Text="{Binding CurrentGroup.Name, Mode=TwoWay}" Height="25" FontSize="15" Margin="-250,-30,0,0"></TextBox>
 
             <ComboBox Width="150" Height="30" Margin="-250,30,0,0" ItemsSource="{Binding Subjects}" DisplayMemberPath="Name"
-                      SelectedValuePath="Name" SelectedValue="{Binding CurrentGroup.Subject.Name, Mode=TwoWay}">
+                      SelectedValuePath="Id" SelectedValue="{Binding CurrentGroup.Subject.Name, Mode=TwoWay}"
+                      SelectedItem="{Binding CurrentGroup.Subject}"
+                      >
             </ComboBox>
             <ComboBox Width="150" Height="30" Margin="-250,90,0,0" ItemsSource="{Binding Levels}" DisplayMemberPath="Name"
-                       SelectedValuePath="Name" SelectedValue="{Binding CurrentGroup.Level.Name, Mode=TwoWay}"
+                       SelectedValuePath="Id" SelectedValue="{Binding CurrentGroup.Level, Mode=TwoWay}"
+                      SelectedItem="{Binding CurrentGroup.Level}"
                       >
             </ComboBox>
             <Label Content="Filial" Name="filiallbl" Width="120" Height="30" Margin="180,-30,0,0" FontSize="15"></Label>
             <Label Content="Note" Name="qeydTxtb" Width="120" Height="30" Margin="180,30,0,0" FontSize="15"></Label>
             <ComboBox Width="150" Height="30" Margin="310,-30,0,0" ItemsSource="{Binding Filials}" DisplayMemberPath="Name"
-                      SelectedValuePath="Name" SelectedValue="{Binding CurrentGroup.Filial.Name, Mode=TwoWay}">
+                      SelectedValuePath="Id" SelectedValue="{Binding CurrentGroup.Filial.Name, Mode=TwoWay}"
+                      SelectedItem="{Binding CurrentGroup.Filial}"
+                      >
             </ComboBox>
             <TextBox Name="noteTxtb" Width="180" Height="60" FontSize="15" Text="{Binding CurrentGroup.Note}" Margin="340,80,0,0"></TextBox>
             <Button Name="AddBtn" Width="100" Height="30" Margin="650,-30,0,10" Command="{Binding AddNewItem}" Content="Add" FontSize="15"></Button>
