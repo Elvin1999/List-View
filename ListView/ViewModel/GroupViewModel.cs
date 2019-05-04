@@ -13,8 +13,9 @@ namespace ListView.ViewModel
    public class GroupViewModel : BaseViewModel
     {
         public Add AddNewItem => new Add(this);
-        private ObservableCollection<Entities.Group> allgroups;
-        
+        public Delete DeleteSelectedItem => new Delete(this);
+        public Update UpdateSelectedItem => new Update(this);
+        private ObservableCollection<Entities.Group> allgroups;       
         public ObservableCollection<Entities.Group> AllGroups
         {
             get
