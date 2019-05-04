@@ -31,7 +31,7 @@
             <Label Content="Filial" Name="filiallbl" Width="120" Height="30" Margin="180,-30,0,0" FontSize="15"></Label>
             <Label Content="Note" Name="qeydTxtb" Width="120" Height="30" Margin="180,30,0,0" FontSize="15"></Label>
             <ComboBox Width="150" Height="30" Margin="310,-30,0,0" ItemsSource="{Binding Filials}" DisplayMemberPath="Name"
-                      SelectedValuePath="Id" SelectedValue="{Binding CurrentGroup.Filial, Mode=TwoWay}"
+                      SelectedValuePath="Id" SelectedValue="{Binding CurrentGroup.Filial.Id}"
                       SelectedItem="{Binding CurrentGroup.Filial}"
                       >
             </ComboBox>

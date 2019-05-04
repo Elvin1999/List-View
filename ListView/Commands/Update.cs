@@ -17,12 +17,10 @@ namespace ListView.Commands
             this.GroupViewModel = GroupViewModel;
         }
         public event EventHandler CanExecuteChanged;
-
         public bool CanExecute(object parameter)
         {
             return true;
         }
-
         public void Execute(object parameter)
         {
             var item = GroupViewModel.AllGroups.FirstOrDefault(x => x.Id == GroupViewModel.CurrentGroup.Id);
@@ -35,7 +33,6 @@ namespace ListView.Commands
                 GroupViewModel.CurrentGroup = new Entities.Group();
                 GroupViewModel.SelectedGroup = new Entities.Group();
             }
-
         }
     }
 }

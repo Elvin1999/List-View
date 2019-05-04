@@ -29,25 +29,7 @@ namespace ListView.Commands
         public string Note { get; set; }*/
 
             GroupViewModel groupViewModel = new GroupViewModel();
-            groupViewModel.AllGroups = new ObservableCollection<Entities.Group>()
-            {
-                new Entities.Group()
-                {
-                    Id=1,Name="Elvin", Subject=new Entities.Subject(){
-                        Id=6,Name="Math"
-                    },
-                    Level=new Entities.Level()
-                    {
-                        Id=1,Name="Beginner"
-                    }
-                    ,Filial=new Entities.Filial(){
-
-                        Id=5,Name="Nizami Filiali"
-                    },Note="Everything is okay ."
-
-
-                }
-            };
+        
 
             groupViewModel.Filials = new List<Entities.Filial>()
             {
@@ -94,6 +76,25 @@ namespace ListView.Commands
 
                     Id=3,
                     Name="Design"
+                }
+            };
+            groupViewModel.AllGroups = new ObservableCollection<Entities.Group>()
+            {
+                new Entities.Group()
+                {
+                    Id=1,Name="Elvin", Subject=new Entities.Subject(){
+                        Id=6,Name=groupViewModel.Subjects[0].Name
+                    },
+                    Level=new Entities.Level()
+                    {
+                        Id=1,Name=groupViewModel.Levels[0].Name
+                    }
+                    ,Filial=new Entities.Filial(){
+
+                        Id=5,Name=groupViewModel.Filials[0].Name
+                    },Note="Everything is okay ."
+
+
                 }
             };
             groupViewModel.CurrentGroup = new Entities.Group();
