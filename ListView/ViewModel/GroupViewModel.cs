@@ -15,6 +15,8 @@ namespace ListView.ViewModel
         public Add AddNewItem => new Add(this);
         public Delete DeleteSelectedItem => new Delete(this);
         public Update UpdateSelectedItem => new Update(this);
+        public ExportExcelCommand ExportExcelCommand => new ExportExcelCommand();
+        public ExportPdfCommand ExportPdfCommand => new ExportPdfCommand();
         private ObservableCollection<Entities.Group> allgroups;       
         public ObservableCollection<Entities.Group> AllGroups
         {

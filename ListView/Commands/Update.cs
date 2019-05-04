@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace ListView.Commands
 {
-   public class Update : ICommand
+    public class Update : ICommand
     {
         public GroupViewModel GroupViewModel { get; set; }
         public Update(GroupViewModel GroupViewModel)
@@ -32,8 +32,10 @@ namespace ListView.Commands
                 var index = GroupViewModel.AllGroups.IndexOf(item);
                 GroupViewModel.AllGroups[index] = GroupViewModel.CurrentGroup;
                 MessageBoxResult update = MessageBox.Show("updated");
-            }          
-            GroupViewModel.CurrentGroup = null;
+                GroupViewModel.CurrentGroup = new Entities.Group();
+                GroupViewModel.SelectedGroup = new Entities.Group();
+            }
+
         }
     }
 }

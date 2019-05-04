@@ -21,7 +21,6 @@ namespace ListView.Commands
 
 
         public event EventHandler CanExecuteChanged;
-
         public bool CanExecute(object parameter)
         {
             return true;
@@ -33,9 +32,15 @@ namespace ListView.Commands
             if (item==null)
             {
                 GroupViewModel.AllGroups.Add(GroupViewModel.CurrentGroup);
-                MessageBoxResult add = MessageBox.Show("added");
-            }          
-            GroupViewModel.CurrentGroup = null;
+                MessageBoxResult add = MessageBox.Show("Added");
+                GroupViewModel.CurrentGroup = new Group();
+                GroupViewModel.SelectedGroup = new Group();
+            }
+            else
+            {
+                MessageBoxResult add = MessageBox.Show("Can not add this item, you can only update and delete");
+            }
+            
 
         }
     }

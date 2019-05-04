@@ -69,6 +69,8 @@
     </Compile>
     <Compile Include="Commands\Add.cs" />
     <Compile Include="Commands\Delete.cs" />
+    <Compile Include="Commands\ExportExcelCommand.cs" />
+    <Compile Include="Commands\ExportPdfCommand.cs" />
     <Compile Include="Commands\ShowSecondView.cs" />
     <Compile Include="Commands\Update.cs" />
     <Compile Include="Entities\Filial.cs" />
