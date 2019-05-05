@@ -22,9 +22,7 @@ namespace ListView
 
         static void MyHandler(object sender, UnhandledExceptionEventArgs args)
         {
-            Exception e = (Exception)args.ExceptionObject;
-            MessageBoxResult messageBoxResult = MessageBox.Show(e.Message);
-
+            Exception e = (Exception)args.ExceptionObject;          
             //FileInfo fileInfo = new FileInfo("exception.txt",true);
             string content = e.Message;
             //File.WriteAllText(fileInfo.Name,content+"\r");
