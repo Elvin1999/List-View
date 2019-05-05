@@ -25,34 +25,44 @@ namespace ListView
         public GroupViewModel GroupVM { get; set; }
         public GroupViewModel GroupVMCopyData { get; set; }
         public GroupViewModel GroupVMFromSearch { get; set; }
+        public ObservableCollection<Entities.Group> AllGroupsCopy { get; set; }
+
         public MainWindow(GroupViewModel GroupVM)
         {
             InitializeComponent();
             this.GroupVM = GroupVM;
             DataContext = GroupVM;
+            AllGroupsCopy = GroupVM.AllGroups;
         }
 
         private void SearchTxtb_KeyUp(object sender, KeyEventArgs e)
         {
 
             var textBox = sender as TextBox;
-            var items = GroupVM.AllGroups.Where(x => x.Name.Contains(textBox.Text)).ToList();
-          
-            MessageBoxResult messageBoxResult = MessageBox.Show(items.ToList()[0].Name);
-            if (items != null)
+            if (textBox.Text != String.Empty)
             {
-                GroupVM.AllGroups = new ObservableCollection<Entities.Group>();
-                foreach (var item in items)
+
+                var items = GroupVM.AllGroups.Where(x => x.Name.Contains(textBox.Text)).ToList();
+
+
+                if (items.Count != 0)
                 {
-                    GroupVM.AllGroups.Add(item);
+
+                    GroupVM.AllGroups = new ObservableCollection<Entities.Group>();
+                    foreach (var item in items)
+                    {
+                        MessageBoxResult messageBoxResult = MessageBox.Show(item.Name);
+                        GroupVM.AllGroups.Add(item);
+                    }
+
+                    DataContext = GroupVM;
                 }
-                
-                DataContext = GroupVM;
-            }
-            else
-            {
-                DataContext = GroupVM;
+                else
+                {
+                    DataContext = new GroupViewModel();
+                }
             }
         }
+
     }
 }
