@@ -95,6 +95,22 @@ namespace ListView.Commands
                     },Note="Everything is okay ."
 
 
+                },
+                new Entities.Group()
+                {
+                    Id=1,Name="Namiq", Subject=new Entities.Subject(){
+                        Id=6,Name=groupViewModel.Subjects[1].Name
+                    },
+                    Level=new Entities.Level()
+                    {
+                        Id=1,Name=groupViewModel.Levels[1].Name
+                    }
+                    ,Filial=new Entities.Filial(){
+
+                        Id=5,Name=groupViewModel.Filials[1].Name
+                    },Note="Everything is okay ."
+
+
                 }
             };
             groupViewModel.CurrentGroup = new Entities.Group();
