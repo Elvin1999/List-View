@@ -33,8 +33,9 @@ namespace ListView.Commands
             {
                 GroupViewModel.AllGroups.Add(GroupViewModel.CurrentGroup);
                 MessageBoxResult add = MessageBox.Show("Added");
-                GroupViewModel.CurrentGroup = new Group();
-                GroupViewModel.SelectedGroup = new Group();
+                GroupViewModel.CurrentGroup = null;
+                GroupViewModel.SelectedGroup = null;
+                
             }
             else
             {
