@@ -14,7 +14,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 namespace ListView
 {
     /// <summary>
@@ -42,7 +41,7 @@ namespace ListView
             if (textBox.Text != String.Empty)
             {
 
-                var items = GroupVM.AllGroups.Where(x => x.Name.Contains(textBox.Text)).ToList();
+                var items = AllGroupsCopy.Where(x => x.Name.Contains(textBox.Text)).ToList();
 
 
                 if (items.Count != 0)
@@ -51,7 +50,6 @@ namespace ListView
                     GroupVM.AllGroups = new ObservableCollection<Entities.Group>();
                     foreach (var item in items)
                     {
-                        MessageBoxResult messageBoxResult = MessageBox.Show(item.Name);
                         GroupVM.AllGroups.Add(item);
                     }
 
@@ -59,7 +57,8 @@ namespace ListView
                 }
                 else
                 {
-                    DataContext = new GroupViewModel();
+                   
+                    DataContext = GroupVM;
                 }
             }
         }
