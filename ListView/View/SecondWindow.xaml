@@ -30,10 +30,10 @@
                       SelectedItem="{Binding CurrentGroup.Level}"
                       >
             </ComboBox>
-            <TextBox Height="25" Width="150" Margin="0,150,445,0" HorizontalAlignment="Right" Text="{Binding FilterText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  x:Name="SearchTxtbx">
+            <TextBox Height="25" Width="150" Margin="0,150,445,0" HorizontalAlignment="Right" Text="{Binding Text,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  x:Name="SearchTxtbx">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="TextChanged">
-                        <i:InvokeCommandAction Command="{Binding FilterCommand}"/>
+                        <i:InvokeCommandAction Command="{Binding SearchCommand}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </TextBox>

@@ -10,14 +10,27 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 namespace ListView.ViewModel
 {
-   public class GroupViewModel : BaseViewModel
+    public class GroupViewModel : BaseViewModel
     {
         public Add AddNewItem => new Add(this);
         public Delete DeleteSelectedItem => new Delete(this);
         public Update UpdateSelectedItem => new Update(this);
+        public SearchCommand SearchCommand => new SearchCommand(this);
         public ExportExcelCommand ExportExcelCommand => new ExportExcelCommand();
         public ExportPdfCommand ExportPdfCommand => new ExportPdfCommand();
-        private ObservableCollection<Entities.Group> allgroups;       
+        private ObservableCollection<Entities.Group> allgroups;
+        private string text;
+
+        public string Text
+        {
+            get { return text; }
+            set
+            {
+                text = value;
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Text)));
+            }
+        }
+
         public ObservableCollection<Entities.Group> AllGroups
         {
             get
@@ -49,7 +62,7 @@ namespace ListView.ViewModel
         public Entities.Group SelectedGroup
         {
             get
-            { 
+            {
                 return selectedGroup;
             }
             set

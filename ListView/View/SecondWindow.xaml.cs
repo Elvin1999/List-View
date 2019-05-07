@@ -34,34 +34,34 @@ namespace ListView
             AllGroupsCopy = GroupVM.AllGroups;
         }
 
-        private void SearchTxtb_KeyUp(object sender, KeyEventArgs e)
-        {
+        //private void SearchTxtb_KeyUp(object sender, KeyEventArgs e)
+        //{
 
-            var textBox = sender as TextBox;
-            if (textBox.Text != String.Empty)
-            {
+        //    var textBox = sender as TextBox;
+        //    if (textBox.Text != String.Empty)
+        //    {
 
-                var items = AllGroupsCopy.Where(x => x.Name.Contains(textBox.Text)).ToList();
+        //        var items = AllGroupsCopy.Where(x => x.Name.Contains(textBox.Text)).ToList();
 
 
-                if (items.Count != 0)
-                {
+        //        if (items.Count != 0)
+        //        {
 
-                    GroupVM.AllGroups = new ObservableCollection<Entities.Group>();
-                    foreach (var item in items)
-                    {
-                        GroupVM.AllGroups.Add(item);
-                    }
+        //            GroupVM.AllGroups = new ObservableCollection<Entities.Group>();
+        //            foreach (var item in items)
+        //            {
+        //                GroupVM.AllGroups.Add(item);
+        //            }
 
-                    DataContext = GroupVM;
-                }
-                else
-                {
+        //            DataContext = GroupVM;
+        //        }
+        //        else
+        //        {
                    
-                    DataContext = GroupVM;
-                }
-            }
-        }
+        //            DataContext = GroupVM;
+        //        }
+        //    }
+        //}
 
     }
 }
