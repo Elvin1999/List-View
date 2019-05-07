@@ -97,8 +97,8 @@
                 </ListView.View>
             </ListView>
                 <StackPanel Orientation="Horizontal">
-                <Label Content="Search" Name="searchlbl2" Width="120" Height="30" Margin="10,50,0,0" FontSize="12"></Label>
-                    <TextBox Height="25" Width="120" HorizontalAlignment="Right" Margin="-70,50,0,0" Text="{Binding Text,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  x:Name="SearchTxtbx">
+                <Label Content="Search" Name="searchlbl2" Width="120" Height="30" Margin="0,50,0,0" FontSize="12"></Label>
+                    <TextBox Height="25" Width="100" HorizontalAlignment="Right" Margin="-60,50,0,0" Text="{Binding Text,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  x:Name="SearchTxtbx">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="TextChanged">
                             <i:InvokeCommandAction Command="{Binding SearchCommand}"/>
