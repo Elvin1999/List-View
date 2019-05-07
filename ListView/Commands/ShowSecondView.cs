@@ -132,8 +132,8 @@ namespace ListView.Commands
                 {
                     Id=1,Name="Togrul", Subject=new Entities.Subject(){
                         Id=6,Name=groupViewModel.Subjects[1].Name
-                    },
-                    Level=new Entities.Level()
+                    }
+                    ,Level=new Entities.Level()
                     {
                         Id=1,Name=groupViewModel.Levels[1].Name
                     }

@@ -6,8 +6,8 @@
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:local="clr-namespace:ListView"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"> 
-    <Grid>
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="DeepSkyBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"></RowDefinition>
             <RowDefinition Height="5*"></RowDefinition>
@@ -17,7 +17,7 @@
             <Label Content="Group Name" Name="groupNamelbl" Width="120" Height="30" Margin="-500,-30,0,0" FontSize="15"></Label>
             <Label Content="Subjects" Name="xTypelbl" Width="120" Height="30" Margin="-500,30,0,0" FontSize="15"></Label>
             <Label Content="Levels" Name="levellbl" Width="120" Height="30" Margin="-500,90,0,0" FontSize="15"></Label>
-            <Label Content="Search" Name="searchlbl" Width="120" Height="30" Margin="-500,145,0,0" FontSize="15"></Label>
+            
             <TextBox  Name="qroupTxtb" Width="150" Text="{Binding CurrentGroup.Name, Mode=TwoWay}" Height="25" FontSize="15" Margin="-250,-30,0,0"></TextBox>
 
             <ComboBox Width="150" Height="30" Margin="-250,30,0,0" ItemsSource="{Binding Subjects}" DisplayMemberPath="Name"
@@ -30,13 +30,7 @@
                       SelectedItem="{Binding CurrentGroup.Level}"
                       >
             </ComboBox>
-            <TextBox Height="25" Width="150" Margin="0,150,445,0" HorizontalAlignment="Right" Text="{Binding Text,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  x:Name="SearchTxtbx">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="TextChanged">
-                        <i:InvokeCommandAction Command="{Binding SearchCommand}"/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </TextBox>
+           
             <Label Content="Filial" Name="filiallbl" Width="120" Height="30" Margin="180,-30,0,0" FontSize="15"></Label>
             <Label Content="Note" Name="qeydTxtb" Width="120" Height="30" Margin="180,30,0,0" FontSize="15"></Label>
             <ComboBox Width="150" Height="30" Margin="310,-30,0,0" ItemsSource="{Binding Filials}" DisplayMemberPath="Name"
@@ -52,8 +46,8 @@
             <Button Name="UpdateBtn" Width="100" Height="30" Margin="650,120,0,10" Command="{Binding UpdateSelectedItem}" Content="Update" FontSize="15"></Button>
         </Grid>
         <Grid Grid.Row="1" >
-
-            <ListView ItemsSource="{Binding AllGroups}" SelectedItem="{Binding SelectedGroup}" >
+            <StackPanel Orientation="Horizontal">
+                <ListView ItemsSource="{Binding AllGroups}" SelectedItem="{Binding SelectedGroup}" Width="620" HorizontalAlignment="Left" Background="DeepSkyBlue">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Id" Width="100">
@@ -102,7 +96,17 @@
                     
                 </ListView.View>
             </ListView>
-            
+                <StackPanel Orientation="Horizontal">
+                <Label Content="Search" Name="searchlbl2" Width="120" Height="30" Margin="10,50,0,0" FontSize="12"></Label>
+                    <TextBox Height="25" Width="120" HorizontalAlignment="Right" Margin="-70,50,0,0" Text="{Binding Text,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  x:Name="SearchTxtbx">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="TextChanged">
+                            <i:InvokeCommandAction Command="{Binding SearchCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TextBox>
+                </StackPanel>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
