@@ -13,6 +13,9 @@ namespace ListView.Entities
         public Subject Subject { get; set; }
         public Level Level { get; set; }
         public Filial Filial { get; set;}
+        public int Subject_Id { get; set; }
+        public int Filial_Id { get; set; }
+        public int Level_Id { get; set; }
         public string Note { get; set; }
         public Group Clone()
         {

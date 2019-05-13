@@ -18,10 +18,12 @@ namespace ListView
         {
             AppDomain currentDomain = AppDomain.CurrentDomain;
             currentDomain.UnhandledException += new UnhandledExceptionEventHandler(MyHandler);
+            DB = new DataAccessLayer("STHQ0116-06", "GroupDb", "admin", "admin");
         }
-
+        public static DataAccessLayer DB;
         static void MyHandler(object sender, UnhandledExceptionEventArgs args)
         {
+
             Exception e = (Exception)args.ExceptionObject;          
             string content = e.Message;
             using (var streamWriter = new StreamWriter("exception.txt", true))

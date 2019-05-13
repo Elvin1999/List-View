@@ -1,4 +1,5 @@
-﻿using ListView.ViewModel;
+﻿using ListView.Entities;
+using ListView.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,12 +22,7 @@ namespace ListView.Commands
         public void Execute(object parameter)
         {
             IdCounter = 0;
-            /*      public int Id { get; set; }
-        public string Name { get; set; }
-        public Subject Subject { get; set; }
-        public int Level { get; set; }
-        public Filial Filial { get; set;}
-        public string Note { get; set; }*/
+
 
             GroupViewModel groupViewModel = new GroupViewModel();
         
@@ -162,6 +158,10 @@ namespace ListView.Commands
                 }
             };
             groupViewModel.CurrentGroup = new Entities.Group();
+            var items=App.DB.GetGroups();
+            List<Group> tempgroups = new List<Group>(groupViewModel.AllGroups);
+            tempgroups.AddRange(items);
+            groupViewModel.AllGroups = new ObservableCollection<Group>(tempgroups);
             MainWindow secWindow = new MainWindow(groupViewModel);
             secWindow.ShowDialog();
 
